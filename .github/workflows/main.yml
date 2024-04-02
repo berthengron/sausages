@@ -11,9 +11,17 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@master
+      - name: Add SHORT_SHA env property
+        run: echo "SHORT_SHA=`echo ${GITHUB_SHA} | cut -c1-8`" >> $GITHUB_ENV
       - name: Install Ionic
         run: npm i -g @ionic/cli
       - name: Install Dependencies
         run: npm install
       - name: Build
         run: ionic build
+      - name: Log in to dockerhub
+        run: docker login --username alistair@hiro.capital -p ${{ DOCKERHUB_KEY }}
+      - name: Build docker image
+        run: docker build -t sausages:v0.1.0  .
+      - name: Push docker image
+        run: docker push alihop/sausages:${SHORT_SHA}
