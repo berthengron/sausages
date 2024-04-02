@@ -20,7 +20,7 @@ jobs:
       - name: Build
         run: ionic build
       - name: Log in to dockerhub
-        run: docker login --username alistair@hiro.capital -p ${{ DOCKERHUB_KEY }}
+        run: docker login --username alistair@hiro.capital -p ${{ secrets.DOCKERHUB_KEY }}
       - name: Build docker image
         run: docker build -t sausages:v0.1.0  .
       - name: Push docker image
