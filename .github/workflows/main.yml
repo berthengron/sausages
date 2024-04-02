@@ -23,5 +23,7 @@ jobs:
         run: docker login --username alistair@hiro.capital -p ${{ secrets.DOCKERHUB_KEY }}
       - name: Build docker image
         run: docker build -t sausages .
-      - name: Push docker image
+      - name: Tag image
+        run: docker tag sausages alihop/sausages:${SHORT_SHA}
+      - name: Push docker image 
         run: docker push alihop/sausages:${SHORT_SHA}
