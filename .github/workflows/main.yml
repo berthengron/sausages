@@ -25,5 +25,7 @@ jobs:
         run: docker build -t sausages .
       - name: Tag image
         run: docker tag sausages alihop/sausages:${SHORT_SHA}
-      - name: Push docker image 
-        run: docker push alihop/sausages:${SHORT_SHA}
+      - name: Tag image latest
+        run: docker tag sausages alihop/sausages:latest
+      - name: Push docker all tags 
+        run: docker push -a
