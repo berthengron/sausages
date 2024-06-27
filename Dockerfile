@@ -24,7 +24,7 @@ COPY --from=builder /app/dist /usr/share/nginx/html
 
 # Expose port 80 to the Docker host, so we can access it 
 # from the outside.
-EXPOSE 80
+EXPOSE 8080
 
 # The command to run when the container is started
 CMD ["nginx", "-g", "daemon off;"]
