@@ -17,14 +17,14 @@ COPY . .
 RUN npm run build
 
 # Step 2: Use nginx to serve the application
-FROM nginx:alpine
+FROM nginx
 
 # Since your build directory is /dist, modify this line accordingly
 COPY --from=builder /app/dist /usr/share/nginx/html
 
 # Expose port 80 to the Docker host, so we can access it 
 # from the outside.
-EXPOSE 8080
+EXPOSE 80
 
 # The command to run when the container is started
 CMD ["nginx", "-g", "daemon off;"]
