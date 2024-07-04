@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sausages-deployment
+  labels:
+    app: sausages
+  annotations:
+    argocd-image-updater.argoproj.io/image-list: alihop/sausages
+    argocd-image-updater.argoproj.io/alihop-sausages.update-strategy: semver
+spec:
+  selector:
+    matchLabels:
+      app: sausages
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: sausages
+    spec:
+      containers:
+      - name: sausages
+        image: alihop/sausages:v1.0.0
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sausages-service
+  labels:
+    app: sausages
+spec:
+  selector:
+    app: sausages
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
