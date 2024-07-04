@@ -3,8 +3,8 @@ kind: Deployment
 metadata:
   name: sausages-deployment
   annotations:
-    argocd-image-updater.argoproj.io/image-list: berthengron/sausages
-    argocd-image-updater.argoproj.io/berthengron/sausages.update-strategy: latest
+    argocd-image-updater.argoproj.io/image-list: alihop/sausages
+    argocd-image-updater.argoproj.io/alihop-sausages.update-strategy: semver
 spec:
   selector:
     matchLabels:
@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: sausages
-        image: berthengron/sausages:latest
+        image: alihop/sausages:latest
         ports:
         - containerPort: 80
 ---
