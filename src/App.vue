@@ -66,7 +66,7 @@ import {
 const selectedIndex = ref(0);
 const appPages = [
   {
-    title: 'Indox',
+    title: 'Infox',
     url: '/folder/Inbox',
     iosIcon: mailOutline,
     mdIcon: mailSharp,
