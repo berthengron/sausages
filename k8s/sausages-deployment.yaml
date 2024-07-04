@@ -26,13 +26,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: sausages-service
-  labels:
-    app: sausages
+  name: web-service
 spec:
   selector:
     app: sausages
   ports:
-  - protocol: TCP
-    port: 80
-    targetPort: 80
+    - protocol: TCP
+      port: 80
+      targetPort: 80
