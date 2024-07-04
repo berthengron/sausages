@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - name: sausages
-        image: alihop/sausages:0000000a
+        image: alihop/sausages:0
         ports:
         - containerPort: 80
 ---
