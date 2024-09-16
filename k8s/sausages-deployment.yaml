@@ -19,7 +19,8 @@ spec:
     spec:
       containers:
       - name: sausages
-        image: alihop/sausages
+        image: alihop/sausages:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 80
 ---
