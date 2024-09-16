@@ -7,7 +7,6 @@ metadata:
   annotations:
     argocd-image-updater.argoproj.io/image-list: alihop/sausages
     argocd-image-updater.argoproj.io/alihop-sausages.update-strategy: latest
-    argocd-image-updater.argoproj.io/alihop-sausages.allow-tags: "regex:^[a-f0-9]{8}$"
 spec:
   selector:
     matchLabels:
