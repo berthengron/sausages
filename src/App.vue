@@ -66,7 +66,7 @@ import {
 const selectedIndex = ref(0);
 const appPages = [
   {
-    title: 'PIles of stuff',
+    title: 'PIles of stuff from Samuel',
     url: '/folder/Inbox',
     iosIcon: mailOutline,
     mdIcon: mailSharp,
