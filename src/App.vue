@@ -78,7 +78,7 @@ const appPages = [
     mdIcon: paperPlaneSharp,
   },
   {
-    title: 'Loathed',
+    title: 'aaas',
     url: '/folder/Favorites',
     iosIcon: heartOutline,
     mdIcon: heartSharp,
